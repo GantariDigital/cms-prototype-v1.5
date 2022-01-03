@@ -174,7 +174,7 @@ class LvManagePelaksanaan extends Component
             }
             if($this->selected_sector_id) {
                 $this->selected_item_sector_group = $item['sector_items'][$this->selected_sector_id] ?? [];
-                if($this->menu['properties']->week_view) {
+                if($this->menu['properties']->week_view && $this->selected_item_sector_group) {
                     $this->selected_item_sector_group = $this->selected_item_sector_group->map(function ($item, $key)
                     {
                         $item['week_of_month'] = Converter::dateToWeekOfMonth($item->tanggal);
