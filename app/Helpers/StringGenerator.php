@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Helpers;
+use Illuminate\Support\Str;
+
+class StringGenerator
+{
+    public static function hashId($length)
+    {
+        $text = Str::random($length);
+        return Str::upper($text);
+    }
+
+    public static function token($length)
+    {
+        return Str::random($length);
+    }
+
+    public static function fileName($extension)
+    {
+        return Str::random(45).'.'.$extension;
+    }
+}
